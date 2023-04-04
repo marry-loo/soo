@@ -1,5 +1,5 @@
 const http = require('http');
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const url = require('url')
 var globalres = '';
 var useraf;
@@ -95,8 +95,7 @@ async function handleRequest(username, callback) {
     atPage = 'mail'
     browser = await puppeteer.launch({
       userDataDir: './users/' + username,
-      headless: false,
-      executablePath: './CefSharp-master'
+      headless: true,
 
     });
 
